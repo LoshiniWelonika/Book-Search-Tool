@@ -1,6 +1,6 @@
 import "../css/Card.css";
 
-function Card() {
+function Card({books}) {
   const cardImage = "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2126&q=80";
 
   return (

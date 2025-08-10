@@ -1,7 +1,20 @@
-import "../css/TopicSection.css";
+import { useState } from "react";
 import Card from "./Card";
+import "../css/TopicSection.css";
+import axios from "axios";
 
 function TopicSection() {
+  const [search,setSearch] = useState(""); 
+  const [bookData, setData] = useState([]);
+
+  const searchBook = (evt) => {
+    if (evt.key === "Enter"){
+      axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCjD-mIjzogMxJbkt98F92ffr1l2vzaP14')
+      .then(res => setData(res.data.items))
+      .catch(err => console.log(err))
+    }
+  };
+
   return (
     <div className="topic-section">
       <main className="main-content">
@@ -43,6 +56,9 @@ function TopicSection() {
               type="text"
               className="search-input"
               placeholder="Enter the book name ..."
+              value={search}
+              onChange={e => setSearch(e.target.value)} 
+              onKeyPress={searchBook}
             />
             <button className="search-btn">
               <i className="fas fa-search"></i>
@@ -52,13 +68,9 @@ function TopicSection() {
       </main>
 
       <div className="container">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {
+            <Card books={bookData} />
+          }
       </div>
     </div>
     
