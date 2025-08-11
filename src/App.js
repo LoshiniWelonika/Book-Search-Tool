@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import TopicSection from './components/TopicSection';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <TopicSection />
+    <Home />
   );
 }
 
