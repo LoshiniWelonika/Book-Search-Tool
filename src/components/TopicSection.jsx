@@ -9,7 +9,7 @@ function TopicSection() {
 
   const searchBook = (evt) => {
     if (evt.key === "Enter"){
-      axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCjD-mIjzogMxJbkt98F92ffr1l2vzaP14')
+      axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCjD-mIjzogMxJbkt98F92ffr1l2vzaP14'+'&maxResults=40')
       .then(res => setData(res.data.items))
       .catch(err => console.log(err))
     }
