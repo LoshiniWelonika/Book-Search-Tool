@@ -4,24 +4,17 @@
 	box-sizing: border-box;
 }
 
-
 img {
 	max-width: 100%;
 	display: block;
 }
 
-.card-list {
-	width: 90%;
-	max-width: 400px;
-}
-
-.card {
-background: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(19, 47, 209, 1) 100%);
+.bookCard {
+	background-color: #64d8f5a3;
 	box-shadow: 0 0 0 1px rgba(#000, .05), 0 20px 50px 0 rgba(#000, .1);
 	border-radius: 15px;
 	overflow: hidden;
 	padding: 1.25rem;
-  height: 20rem;
 	position: relative;
 	transition: .15s ease-in;
 	
@@ -31,68 +24,67 @@ background: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(19, 47, 209, 1) 
 	}
 }
 
-.card-image {
+.bookCard-image {
 	border-radius: 10px;
 	overflow: hidden;
-  display: flex;               
-  justify-content: center;    
-  align-items: center;   
-  height: 50%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.card-header {
+.bookCard-header {
 	margin-top: 1.5rem;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	a {
+	justify-content: space-between; 
 		font-weight: 600;
-		font-size: 1.375rem;
+		font-size: 18px;
 		line-height: 1.25;
 		padding-right: 1rem;
 		text-decoration: none;
-		color: rgb(5, 30, 71);
-		will-change: transform;
-		&:after {
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-		}
-	}
-	
-	
+		color: black;
+		padding-bottom: 1.23rem;	
+		border-bottom: 1px solid #0c0342;
 }
 
-.card-footer {
-	margin-top: 1.25rem;
-	border-top: 1px solid #ddd;
-	padding-top: 1.25rem;
+.icon-button {
+	border: 0;
+	background-color: #64d8f5a3;
+	border-radius: 50%;
+	width: 2.5rem;
+	height: 2.5rem;
 	display: flex;
+	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap;
-}
-
-.card-meta {	
-	display: flex;
-	align-items: center;
-	color: #023830;
-	&:first-child:after {
-		display: block;
-		content: "";
-		width: 4px;
-		height: 4px;
-		border-radius: 50%;
-		background-color: currentcolor;
-		margin-left: .75rem;
-		margin-right: .75rem;
-	}
+	flex-shrink: 0;
+	font-size: 1.25rem;
+	transition: .25s ease;
+	box-shadow: 0 0 0 1px rgba(#000, .05), 0 3px 8px 0 rgba(#000, .15);
+	z-index: 1;
+	cursor: pointer;
+	color: #565656;
+	
 	svg {
-		flex-shrink: 0;
 		width: 1em;
 		height: 1em;
-		margin-right: .25em;
 	}
+	&:hover, &:focus {
+		background-color: #EC4646;
+		color: #FFF;
+	}
+}
+
+.bookCard-footer {
+	background-color: #06853299;
+	margin-top: 1.25rem;
+	padding: 0.7rem;
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600px;
 }
